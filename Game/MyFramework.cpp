@@ -14,8 +14,6 @@
 #include <SDL_image.h>
 
 SDL_Window* gWindow = nullptr;
-SDL_Renderer* gRenderer = nullptr;
-
 
 MyFramework::MyFramework(int num_enemies /*= 100*/
 	, int i_max_ammo /*= 3*/
@@ -64,13 +62,13 @@ bool MyFramework::Init() {
 	gWindow = SDL_CreateWindow("Crimsonland",
 		SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, window_size_w, window_size_h, SDL_WINDOW_SHOWN);
 
-	gRenderer = GetRenderer(gWindow);
-	SDL_SetRenderDrawColor(gRenderer, 0, 255, 0, 255);
+	auto renderer = GetRenderer(gWindow);
+	SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
 
-	auto player_path = "D:\\interview\\dragonlake\\data\\avatar.jpg";
-	auto enemy_path = "D:\\interview\\dragonlake\\data\\enemy.png";
-	auto cursor_path = "D:\\interview\\dragonlake\\data\\circle.tga";
-	auto bullet_path = "D:\\interview\\dragonlake\\data\\bullet.png";
+	auto player_path = "..\\data\\avatar.jpg";
+	auto enemy_path = "..\\data\\enemy.png";
+	auto cursor_path = "..\\data\\circle.tga";
+	auto bullet_path = "..\\data\\bullet.png";
 
 	player = std::make_unique<Player>(player_path);
 	player->GeneratePosition(window_size_w, window_size_h);
@@ -87,10 +85,9 @@ bool MyFramework::Init() {
 }
 
 void MyFramework::Close() {
-	SDL_DestroyRenderer(gRenderer);
+	SDL_DestroyRenderer(GetRenderer());
 	SDL_DestroyWindow(gWindow);
 
-	gRenderer = nullptr;
 	gWindow = nullptr;
 
 	IMG_Quit();
@@ -114,7 +111,7 @@ void MyFramework::UpdateKill() {
 }
 
 bool MyFramework::Tick() {
-	SDL_RenderClear(gRenderer);
+	SDL_RenderClear(GetRenderer());
 
 	enemy_manager->UpdateAll();
 	enemy_manager->RenderAll();

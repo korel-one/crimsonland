@@ -101,7 +101,8 @@
     </Link>
     <PreBuildEvent>
       <Command>xcopy /y "$(SolutionDir)ThirdParty\SDL2_image-devel-2.0.3-VC\SDL2_image-2.0.3\lib\$(PlatformName)\*.dll" "$(SolutionDir)$(Platform)\$(Configuration)\"
-xcopy /y "$(SolutionDir)ThirdParty\SDL2-devel-2.0.8-VC\SDL2-2.0.8\lib\$(PlatformName)\*.dll" "$(SolutionDir)$(Platform)\$(Configuration)\"</Command>
+xcopy /y "$(SolutionDir)ThirdParty\SDL2-devel-2.0.8-VC\SDL2-2.0.8\lib\$(PlatformName)\*.dll" "$(SolutionDir)$(Platform)\$(Configuration)\"
+xcopy /y "$(SolutionDir)data\*.*" "$(SolutionDir)$(Platform)\data\"</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -158,7 +159,8 @@ xcopy /y "$(SolutionDir)ThirdParty\SDL2-devel-2.0.8-VC\SDL2-2.0.8\lib\$(Platform
     </Link>
     <PreBuildEvent>
       <Command>xcopy /y "$(SolutionDir)ThirdParty\SDL2_image-devel-2.0.3-VC\SDL2_image-2.0.3\lib\$(PlatformName)\*.dll" "$(SolutionDir)$(Platform)\$(Configuration)\"
-xcopy /y "$(SolutionDir)ThirdParty\SDL2-devel-2.0.8-VC\SDL2-2.0.8\lib\$(PlatformName)\*.dll" "$(SolutionDir)$(Platform)\$(Configuration)\"</Command>
+xcopy /y "$(SolutionDir)ThirdParty\SDL2-devel-2.0.8-VC\SDL2-2.0.8\lib\$(PlatformName)\*.dll" "$(SolutionDir)$(Platform)\$(Configuration)\"
+xcopy /y "$(SolutionDir)data\*.*" "$(SolutionDir)$(Platform)\data\"</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

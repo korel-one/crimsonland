@@ -9,10 +9,7 @@ class Reticle;
 class Player;
 
 struct SDL_Window;
-struct SDL_Renderer;
-
 extern SDL_Window* gWindow;
-extern SDL_Renderer* gRenderer;
 
 /* Test Framework realization */
 class MyFramework : public Framework {
