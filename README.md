@@ -4,7 +4,7 @@
 - Microsoft Visual C++ 2017
 
 ## **Launch**
-  - Game.exe -> by default num_enemies=20, ammo=3, window=1024x680
+  - Game.exe -> by default num_enemies=20, num_ammo=3, window=1024x680
   - Game.exe -window [width]x[height] -map [width]x[height] -num_enemies [val] -num_ammo [val]
     
 ## Not completed functionality:
