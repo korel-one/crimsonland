@@ -11,9 +11,6 @@ class GameObject {
 public:
 	explicit GameObject(const char* path);
 	explicit GameObject(SDL_Surface* image);
-	GameObject(GameObject&& game_object);
-	GameObject& operator=(GameObject&& game_object);
-
 
 	int GetWidth() const { return sprite->GetWidth(); }
 	int GetHeight() const { return sprite->GetHeight(); }

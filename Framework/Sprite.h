@@ -10,9 +10,6 @@ public:
 	Sprite(const char* path, int i_x = 0, int i_y = 0);
 	Sprite(SDL_Surface* image, int i_x = 0, int i_y = 0);
 
-	Sprite(Sprite&& source);
-	Sprite& operator=(Sprite&& source);
-
 	Sprite(const Sprite&) = delete;
 	Sprite& operator=(const Sprite&) = delete;
 

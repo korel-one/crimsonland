@@ -18,17 +18,6 @@ Bullet::Bullet(SDL_Surface* image
 	SetSpeed(2.5);
 }
 
-Bullet::Bullet(Bullet&& another) : GameObject(std::move(another)) {
-	id = another.id;
-	alpha = another.alpha;
-}
-Bullet& Bullet::operator = (Bullet&& another) {
-	GameObject::operator=(std::move(another));
-	id = another.id;
-	alpha = another.alpha;
-	return *this;
-}
-
 void Bullet::Update(double sp /*= 1*/) {
 	SetPositionX(GetPositionX() + speed * cos(alpha));
 	SetPositionY(GetPositionY() + speed * sin(alpha));

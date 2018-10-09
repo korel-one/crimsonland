@@ -5,23 +5,6 @@
 
 #include <SDL_image.h>
 
-Sprite::Sprite(Sprite&& source) {
-	texture = source.texture;
-	source.texture = nullptr;
-
-	srcRect = source.srcRect;
-	destRect = source.destRect;
-}
-
-Sprite& Sprite::operator=(Sprite&& source) {
-	texture = source.texture;
-	source.texture = nullptr;
-
-	srcRect = source.srcRect;
-	destRect = source.destRect;
-	return *this;
-}
-
 Sprite::Sprite(const char* path, int i_x /*= 0*/, int i_y /*= 0*/) {
 	SDL_Surface* image = IMG_Load(path);
 	texture = SDL_CreateTextureFromSurface(GetRenderer(), image);
